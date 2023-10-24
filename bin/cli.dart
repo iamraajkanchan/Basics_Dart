@@ -22,10 +22,11 @@ void simulatorOfCollections() {
 }
 
 void simulatorOfClasses() {
-  ClassesPoint firstPosition = new ClassesPoint(2, 3);
-  ClassesPoint secondPosition = new ClassesPoint(5, 6);
-  ClassesPoint thirdPosition = new ClassesPoint(9, 10);
-  ClassesPoint fourthPosition = new ClassesPoint(6, 4);
+  ClassesPoint firstPosition = ClassesPoint.setValues(4, 3);
+  ClassesPoint secondPosition = ClassesPoint(5, 6);
+  ClassesPoint thirdPosition = ClassesPoint(9, 10);
+  ClassesPoint fourthPosition = ClassesPoint(6, 4);
+
   List<ClassesPoint> points = [
     firstPosition,
     secondPosition,
