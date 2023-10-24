@@ -40,4 +40,13 @@ void simulatorOfClasses() {
   triangle.showVertex();
   print("Showing distance between one point object to another point object.");
   print(firstPosition.distanceTo(secondPosition));
+  print("Showing example of operator overriding.");
+  ClassesPoint sumPosition = firstPosition + secondPosition;
+  print("Value of instance variables of new ClassPoint instance after using overridden + operator");
+  print("x: ${sumPosition.xPosition}, y: ${sumPosition.yPosition}");
+  ClassesPoint diffPosition = secondPosition - firstPosition;
+  print("Value of instance variables of new ClassPoint instance after using overridden - operator");
+  print("x: ${diffPosition.xPosition}, y: ${diffPosition.yPosition}");
+  print("Comparison of instances of ClassPoint using overridden == operator");
+  print("${diffPosition == sumPosition}");
 }

@@ -25,4 +25,17 @@ class ClassesPoint {
     int? dy = yPosition! - other.yPosition!;
     return sqrt(dx * dx + dy * dy);
   }
+
+  // This overridden + operator returns an instance of ClassesPoint.
+  ClassesPoint operator +(ClassesPoint other) => ClassesPoint(
+      xPosition! + other.xPosition!, yPosition! + other.yPosition!);
+
+  // This overridden - operator returns an instance of ClassesPoint.
+  ClassesPoint operator -(ClassesPoint other) => ClassesPoint(
+      xPosition! - other.xPosition!, yPosition! - other.yPosition!);
+
+  bool operator ==(Object other) =>
+      other is ClassesPoint &&
+      xPosition == other.xPosition &&
+      yPosition == other.yPosition;
 }
