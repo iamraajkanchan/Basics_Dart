@@ -38,4 +38,6 @@ void simulatorOfClasses() {
   Set<ClassesPoint> vertices = {firstPosition, secondPosition, thirdPosition};
   ClassesTriangle triangle = ClassesTriangle(vertices.toList());
   triangle.showVertex();
+  print("Showing distance between one point object to another point object.");
+  print(firstPosition.distanceTo(secondPosition));
 }
