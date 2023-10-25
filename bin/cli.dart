@@ -1,7 +1,7 @@
-import '../lib/classes/classes_point.dart';
-import '../lib/classes/classes_square.dart';
-import '../lib/classes/classes_triangle.dart';
-import '../lib/collections/collections.dart';
+import 'package:cli/classes/classes_point.dart';
+import 'package:cli/classes/classes_square.dart';
+import 'package:cli/classes/classes_triangle.dart';
+import 'package:cli/collections/collections.dart';
 
 void main(List<String> arguments) {
   simulatorOfClasses();
