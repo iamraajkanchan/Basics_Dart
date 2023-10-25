@@ -1,4 +1,5 @@
 import 'package:cli/classes/classes_point.dart';
+import 'package:cli/classes/classes_rectangle.dart';
 import 'package:cli/classes/classes_square.dart';
 import 'package:cli/classes/classes_triangle.dart';
 import 'package:cli/collections/collections.dart';
@@ -49,4 +50,11 @@ void simulatorOfClasses() {
   print("x: ${diffPosition.xPosition}, y: ${diffPosition.yPosition}");
   print("Comparison of instances of ClassPoint using overridden == operator");
   print("${diffPosition == sumPosition}");
+  print("Value of Rectangles");
+  ClassesRectangle rectangle = ClassesRectangle(3, 10, 6, 20);
+  print("Example of using getter of a class.");
+  print("Right: ${rectangle.right}, Left: ${rectangle.left}, Top: ${rectangle.top}, Bottom: ${rectangle.bottom}");
+  rectangle.right = 20.0;
+  print("Example of using setter of a class.");
+  print("Right: ${rectangle.right}, Left: ${rectangle.left}, Top: ${rectangle.top}, Bottom: ${rectangle.bottom}");
 }
