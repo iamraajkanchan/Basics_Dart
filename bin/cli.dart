@@ -1,14 +1,13 @@
-import 'dart:math';
-
 import 'package:cli/classes/classes_point.dart';
 import 'package:cli/classes/classes_rectangle.dart';
 import 'package:cli/classes/classes_square.dart';
 import 'package:cli/classes/classes_triangle.dart';
 import 'package:cli/collections/collections.dart';
 import 'package:cli/enums/enums.dart';
+import 'package:cli/null_types/null_type.dart';
 
 void main(List<String> arguments) {
-  simulatorOfEnums();
+  simulatorOfNullTypes();
 }
 
 void simulatorOfCollections() {
@@ -69,4 +68,11 @@ void simulatorOfClasses() {
 void simulatorOfEnums() {
   EnumExample example = EnumExample(vehicle: AutoMobile.bike);
   example.displayYourVehicle();
+}
+
+void simulatorOfNullTypes() {
+  NullTypeExample example = NullTypeExample();
+  example.howToDeclareNonNullableVariable();
+  example.howToDeclareNullableVariable();
+  example.useDefaultNullValueCondition();
 }
