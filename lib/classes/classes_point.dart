@@ -15,8 +15,8 @@ class ClassesPoint {
 
   // When you use factory method you can't use final for the class variable.
   ClassesPoint.setValues(int x, int y) {
-    this.xPosition = x;
-    this.yPosition = y;
+    xPosition = x;
+    yPosition = y;
   }
 
   // distanceTo is an instance method.
@@ -34,6 +34,7 @@ class ClassesPoint {
   ClassesPoint operator -(ClassesPoint other) => ClassesPoint(
       xPosition! - other.xPosition!, yPosition! - other.yPosition!);
 
+  @override
   bool operator ==(Object other) =>
       other is ClassesPoint &&
       xPosition == other.xPosition &&

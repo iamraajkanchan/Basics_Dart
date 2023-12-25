@@ -39,7 +39,7 @@ void showSuperVillains() {
 }
 
 // heroVillainGroup is a Map
-final heroVillainGroup = Map<String, String>();
+final heroVillainGroup = <String, String>{};
 void addHeroVillainGroup() {
   heroVillainGroup[superHeroes.firstWhere((element) => element == "Super Man")] = superVillain.firstWhere((element) => element == "Lex Luther");
   heroVillainGroup[superHeroes.firstWhere((element) => element == "Iron Man")] = superVillain.firstWhere((element) => element == "Thanos");

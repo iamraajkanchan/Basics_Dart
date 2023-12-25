@@ -20,11 +20,11 @@ class NullTypeExample {
     String? firstNameInitial = firstName?[0];
     print("howToDeclareNullableVariable :: Value of firstNameInitial: $firstNameInitial");
     firstName = "Albert Einstein";
-    firstNameInitial = firstName?[0];
+    firstNameInitial = firstName[0];
     print("howToDeclareNullableVariable :: Value of firstNameInitial: $firstNameInitial");
     // '!' is the bang operator. It is used to assign a nullable variable to a non-nullable variable.
     // Note: If you use the bang operator and when it will throw an exception and interrupt the execution.
-    String nonNullableFirstNameInitial = firstNameInitial!;
+    String nonNullableFirstNameInitial = firstNameInitial;
     print("howToDeclareNullableVariable :: Value of the nonNullableFirstNameInitial: $nonNullableFirstNameInitial");
   }
 

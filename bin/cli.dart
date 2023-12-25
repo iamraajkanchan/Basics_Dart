@@ -5,9 +5,10 @@ import 'package:cli/classes/classes_triangle.dart';
 import 'package:cli/collections/collections.dart';
 import 'package:cli/enums/enums.dart';
 import 'package:cli/null_types/null_type.dart';
+import 'package:cli/relational_operator/relational_operator.dart';
 
 void main(List<String> arguments) {
-  simulatorOfNullTypes();
+  simulatorForRelationalOperator();
 }
 
 void simulatorOfCollections() {
@@ -75,4 +76,10 @@ void simulatorOfNullTypes() {
   example.howToDeclareNonNullableVariable();
   example.howToDeclareNullableVariable();
   example.useDefaultNullValueCondition();
+}
+
+void simulatorForRelationalOperator() {
+  RelationalOperator example = RelationalOperator();
+  example.checkForBothNullVariable();
+  example.checkForOneNullVariable();
 }
