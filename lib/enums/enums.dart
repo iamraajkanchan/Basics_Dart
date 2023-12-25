@@ -3,7 +3,7 @@ enum AutoMobile { car, jeep, suv, truck, bike }
 class EnumExample {
   final AutoMobile vehicle;
 
-  EnumExample({required this.vehicle});
+  EnumExample(this.vehicle);
 
   void displayYourVehicle() {
     switch (vehicle) {

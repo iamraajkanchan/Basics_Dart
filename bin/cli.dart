@@ -3,12 +3,13 @@ import 'package:cli/classes/classes_rectangle.dart';
 import 'package:cli/classes/classes_square.dart';
 import 'package:cli/classes/classes_triangle.dart';
 import 'package:cli/collections/collections.dart';
+import 'package:cli/control_flow/control_flow.dart';
 import 'package:cli/enums/enums.dart';
 import 'package:cli/null_types/null_type.dart';
 import 'package:cli/relational_operator/relational_operator.dart';
 
 void main(List<String> arguments) {
-  simulatorForRelationalOperator();
+  simulatorForControlFlow();
 }
 
 void simulatorOfCollections() {
@@ -67,7 +68,7 @@ void simulatorOfClasses() {
 }
 
 void simulatorOfEnums() {
-  EnumExample example = EnumExample(vehicle: AutoMobile.bike);
+  EnumExample example = EnumExample(AutoMobile.car);
   example.displayYourVehicle();
 }
 
@@ -82,4 +83,11 @@ void simulatorForRelationalOperator() {
   RelationalOperator example = RelationalOperator();
   example.checkForBothNullVariable();
   example.checkForOneNullVariable();
+}
+
+void simulatorForControlFlow() {
+  ControlFlow example = ControlFlow();
+  example.switchWithBreak(2);
+  example.switchWithoutBreak(2);
+  example.switchWithTwoCombinedCondition(2);
 }
