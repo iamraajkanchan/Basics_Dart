@@ -5,7 +5,7 @@ import 'package:cli/classes/classes_triangle.dart';
 import 'package:cli/collections/collections.dart';
 import 'package:cli/control_flow/control_flow.dart';
 import 'package:cli/enums/enums.dart';
-import 'package:cli/functions/function_example.dart';
+import 'package:cli/functions/function_example.dart' as function;
 import 'package:cli/null_types/null_type.dart';
 import 'package:cli/relational_operator/relational_operator.dart';
 
@@ -94,7 +94,7 @@ void simulatorForControlFlow() {
 }
 
 void simulatorForFunctionExample() {
-  FunctionExample example = FunctionExample();
+  function.FunctionExample example = function.FunctionExample();
   // Using cascade operator to call void functions of the class.
   example
     ..applyChecker()
