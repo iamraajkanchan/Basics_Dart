@@ -95,10 +95,12 @@ void simulatorForControlFlow() {
 
 void simulatorForFunctionExample() {
   FunctionExample example = FunctionExample();
-  example.applyChecker();
-  example.anonymousFunctionExample();
-  example.callbackFunctionExample();
-  example.useOfOptionalParameter();
-  example.useOfPositionalParameter();
-  example.useOfTypeDefFunctions();
+  // Using cascade operator to call void functions of the class.
+  example
+    ..applyChecker()
+    ..anonymousFunctionExample()
+    ..callbackFunctionExample()
+    ..useOfOptionalParameter()
+    ..useOfPositionalParameter()
+    ..useOfTypeDefFunctions();
 }
