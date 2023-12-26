@@ -76,7 +76,7 @@ class FunctionExample {
     _exampleWithAnOptionalPositionalParameter(24);
   }
 
-  void _printInterLogs(LoggerFunction logger) {
+  void _printIntegerLogs(LoggerFunction logger) {
     logger("Printing an Integer Log");
   }
 
@@ -85,11 +85,8 @@ class FunctionExample {
   }
 
   void useOfTypeDefFunctions() {
-    _printInterLogs((msg) {
-      print(msg);
-    });
-    _printDoubleLogs((msg) {
-      print(msg);
-    });
+    // Because print takes a parameter and returns a void we can use the print reference i.e. print.
+    _printIntegerLogs(print);
+    _printDoubleLogs(print);
   }
 }
