@@ -5,11 +5,12 @@ import 'package:cli/classes/classes_triangle.dart';
 import 'package:cli/collections/collections.dart';
 import 'package:cli/control_flow/control_flow.dart';
 import 'package:cli/enums/enums.dart';
+import 'package:cli/functions/function_example.dart';
 import 'package:cli/null_types/null_type.dart';
 import 'package:cli/relational_operator/relational_operator.dart';
 
 void main(List<String> arguments) {
-  simulatorForControlFlow();
+  simulatorForFunctionExample();
 }
 
 void simulatorOfCollections() {
@@ -90,4 +91,14 @@ void simulatorForControlFlow() {
   example.switchWithBreak(2);
   example.switchWithoutBreak(2);
   example.switchWithTwoCombinedCondition(2);
+}
+
+void simulatorForFunctionExample() {
+  FunctionExample example = FunctionExample();
+  example.applyChecker();
+  example.anonymousFunctionExample();
+  example.callbackFunctionExample();
+  example.useOfOptionalParameter();
+  example.useOfPositionalParameter();
+  example.useOfTypeDefFunctions();
 }

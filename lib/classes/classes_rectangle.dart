@@ -1,13 +1,19 @@
 class ClassesRectangle {
-  double left, width, top, height;
+  // To set a private variable in Dart, use underscore before the name of the variable.
+  final double _width, _height;
+  double _left, _top;
 
-  ClassesRectangle(this.left, this.width, this.top, this.height);
+  ClassesRectangle(this._left, this._width, this._top, this._height);
 
-  double get right => left + width;
+  double get right => _left + _width;
 
-  set right(double value) => left = width - value;
+  set right(double value) => _left = _width - value;
 
-  double get bottom => top + height;
+  double get bottom => _top + _height;
 
-  set bottom(double value) => top = height - value;
+  set bottom(double value) => _top = _height - value;
+
+  double get left => _left;
+
+  double get top => _top;
 }
