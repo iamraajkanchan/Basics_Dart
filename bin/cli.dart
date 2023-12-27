@@ -3,6 +3,7 @@ import 'package:cli/classes/classes_rectangle.dart';
 import 'package:cli/classes/classes_square.dart';
 import 'package:cli/classes/classes_triangle.dart';
 import 'package:cli/collections/collections.dart';
+import 'package:cli/constructors/factory_constructor.dart';
 import 'package:cli/constructors/fractions.dart';
 import 'package:cli/control_flow/control_flow.dart';
 import 'package:cli/enums/enums.dart';
@@ -110,8 +111,14 @@ void simulatorForConstructor() {
   FractionsWithPublicProperties firstFraction =
       FractionsWithPublicProperties(nominator: 1, denominator: 3);
   firstFraction.showFraction();
-  FractionsWithPublicProperties secondFraction = FractionsWithPublicProperties.whole(4);
+  FractionsWithPublicProperties secondFraction =
+      FractionsWithPublicProperties.whole(4);
   secondFraction.showFraction();
-  FractionsWithPrivateProperties thirdFraction = FractionsWithPrivateProperties(32, 6);
+  FractionsWithPrivateProperties thirdFraction =
+      FractionsWithPrivateProperties(32, 6);
   thirdFraction.showFraction();
+  FactoryConstructor firstFactoryConstructor = FactoryConstructor('Spider-Man');
+  FactoryConstructor secondFactoryConstructor = FactoryConstructor("He-Man");
+  FactoryConstructor thirdFactoryConstructor = FactoryConstructor("Iron-Man");
+  FactoryConstructor fourthFactoryConstructor = FactoryConstructor("Spider-Man");
 }
