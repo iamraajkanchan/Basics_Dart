@@ -3,6 +3,7 @@ import 'package:cli/classes/classes_rectangle.dart';
 import 'package:cli/classes/classes_square.dart';
 import 'package:cli/classes/classes_triangle.dart';
 import 'package:cli/collections/collections.dart';
+import 'package:cli/constructors/fractions.dart';
 import 'package:cli/control_flow/control_flow.dart';
 import 'package:cli/enums/enums.dart';
 import 'package:cli/functions/function_example.dart' as function;
@@ -10,7 +11,7 @@ import 'package:cli/null_types/null_type.dart';
 import 'package:cli/relational_operator/relational_operator.dart';
 
 void main(List<String> arguments) {
-  simulatorForFunctionExample();
+  simulatorForConstructor();
 }
 
 void simulatorOfCollections() {
@@ -103,4 +104,14 @@ void simulatorForFunctionExample() {
     ..useOfOptionalParameter()
     ..useOfPositionalParameter()
     ..useOfTypeDefFunctions();
+}
+
+void simulatorForConstructor() {
+  FractionsWithPublicProperties firstFraction =
+      FractionsWithPublicProperties(nominator: 1, denominator: 3);
+  firstFraction.showFraction();
+  FractionsWithPublicProperties secondFraction = FractionsWithPublicProperties.initDenominator(4);
+  secondFraction.showFraction();
+  FractionsWithPrivateProperties thirdFraction = FractionsWithPrivateProperties(32, 6);
+  thirdFraction.showFraction();
 }

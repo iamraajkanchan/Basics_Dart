@@ -1,4 +1,8 @@
-class FractionsWithPrivateProperties {
+abstract class Fraction {
+  void showFraction();
+}
+
+class FractionsWithPrivateProperties extends Fraction {
   final int? _nominator;
   int? _denominator;
 
@@ -12,17 +16,27 @@ class FractionsWithPrivateProperties {
   void _setDefaultDenominator() {
     _denominator = 1;
   }
+
+  @override
+  void showFraction() {
+    print(
+        "FractionsWithPrivateProperties :: showFraction :: result : ${_nominator! / _denominator!}");
+  }
 }
 
-class FractionsWithPublicProperties {
+class FractionsWithPublicProperties extends Fraction {
   final int? nominator;
   int? denominator;
 
-  FractionsWithPublicProperties({required this.nominator, this.denominator}) {
-    _setDefaultDenominator();
-  }
+  FractionsWithPublicProperties({required this.nominator, this.denominator});
 
-  void _setDefaultDenominator() {
-    denominator = 1;
+  FractionsWithPublicProperties.initDenominator(int number)
+      : nominator = number,
+        denominator = 1;
+
+  @override
+  void showFraction() {
+    print(
+        "FractionsWithPublicProperties :: showFraction :: result : ${nominator! / denominator!}");
   }
 }
