@@ -120,5 +120,9 @@ void simulatorForConstructor() {
   FactoryConstructor firstFactoryConstructor = FactoryConstructor('Spider-Man');
   FactoryConstructor secondFactoryConstructor = FactoryConstructor("He-Man");
   FactoryConstructor thirdFactoryConstructor = FactoryConstructor("Iron-Man");
-  FactoryConstructor fourthFactoryConstructor = FactoryConstructor("Spider-Man");
+  FactoryConstructor fourthFactoryConstructor =
+      FactoryConstructor("Spider-Man");
+  AnotherFactoryConstructor fifthFactoryConstructor =
+      AnotherFactoryConstructor(20);
+  fifthFactoryConstructor.getA();
 }

@@ -26,3 +26,19 @@ class FactoryConstructor {
     }
   }
 }
+
+class AnotherFactoryConstructor {
+  final int _a;
+
+  // This is a private constructor which cannot be called from outside.
+  AnotherFactoryConstructor._(this._a);
+
+  void getA() {
+    print("AnotherFactoryConstructor :: getA :: a : $_a");
+  }
+
+  factory AnotherFactoryConstructor(int a) {
+    final multiply = a * 3;
+    return AnotherFactoryConstructor._(multiply);
+  }
+}
