@@ -3,6 +3,7 @@ import 'package:cli/classes/classes_rectangle.dart';
 import 'package:cli/classes/classes_square.dart';
 import 'package:cli/classes/classes_triangle.dart';
 import 'package:cli/collections/collections.dart';
+import 'package:cli/constructors/const_constructor.dart';
 import 'package:cli/constructors/factory_constructor.dart';
 import 'package:cli/constructors/fractions.dart';
 import 'package:cli/control_flow/control_flow.dart';
@@ -125,4 +126,24 @@ void simulatorForConstructor() {
   AnotherFactoryConstructor fifthFactoryConstructor =
       AnotherFactoryConstructor(20);
   fifthFactoryConstructor.getA();
+  final superMan = ConstConstructor("Clark Kent", "Super Man");
+  const List<ConstConstructor> superHeroList = [
+    ConstConstructor("Peter Parker", "Spider Man"),
+    ConstConstructor("Barry Allen", "Flash")
+  ];
+  // As this is a const variable you cannot add another element in it.
+  // superHeroList.add(superMan);
+  final List<ConstConstructor> newSuperHeroList = [
+    ConstConstructor("Peter Parker", "Spider Man"),
+    ConstConstructor("Barry Allen", "Flash")
+  ];
+  // As this is a final variable you can add another element in it.
+  newSuperHeroList.add(superMan);
+  for (ConstConstructor member in superHeroList) {
+    print(member.toString());
+  }
+  print("=========================================");
+  for (ConstConstructor member in newSuperHeroList) {
+    print(member.toString());
+  }
 }

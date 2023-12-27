@@ -4,6 +4,7 @@ class FactoryConstructor {
   // If the _nameList weren't a static member, it would be created every time that an object
   // of FactoryConstructor is instantiated. It'd be a waste of memory and performance problem.
   // In this way we guaranteed that there's an unique list created only once.
+  // You can use const or final to declare a static member.
   static final List<String> _nameList = [];
 
   // Note: A factory constructor always returns an instance of a class,
@@ -28,6 +29,8 @@ class FactoryConstructor {
 }
 
 class AnotherFactoryConstructor {
+  // You can't use const to declare an instance member.
+  // You can only use final to declare an instance member
   final int _a;
 
   // This is a private constructor which cannot be called from outside.
