@@ -110,7 +110,7 @@ void simulatorForConstructor() {
   FractionsWithPublicProperties firstFraction =
       FractionsWithPublicProperties(nominator: 1, denominator: 3);
   firstFraction.showFraction();
-  FractionsWithPublicProperties secondFraction = FractionsWithPublicProperties.initDenominator(4);
+  FractionsWithPublicProperties secondFraction = FractionsWithPublicProperties.whole(4);
   secondFraction.showFraction();
   FractionsWithPrivateProperties thirdFraction = FractionsWithPrivateProperties(32, 6);
   thirdFraction.showFraction();
