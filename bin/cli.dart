@@ -11,12 +11,13 @@ import 'package:cli/constructors/fractions.dart';
 import 'package:cli/control_flow/control_flow.dart';
 import 'package:cli/enums/enums.dart';
 import 'package:cli/functions/function_example.dart' as function;
+import 'package:cli/inheritance/inheritance_example.dart';
 import 'package:cli/null_types/null_type.dart';
 import 'package:cli/projectUtility.dart';
 import 'package:cli/relational_operator/relational_operator.dart';
 
 void main(List<String> arguments) {
-  simulatorForConstructor();
+  simulatorForInheritance();
 }
 
 void simulatorOfCollections() {
@@ -158,4 +159,10 @@ void simulatorForConstructor() {
   print(callableExample.call());
   addSeparation(100);
   CloningObjectSimulator().cloneCandidates();
+}
+
+void simulatorForInheritance() {
+  final simulator = InheritanceSimulator();
+  simulator.simulateDoubleValue();
+  simulator.simulateDoubleFromSuperValue();
 }
