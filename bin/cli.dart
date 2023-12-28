@@ -3,6 +3,7 @@ import 'package:cli/classes/classes_rectangle.dart';
 import 'package:cli/classes/classes_square.dart';
 import 'package:cli/classes/classes_triangle.dart';
 import 'package:cli/collections/collections.dart';
+import 'package:cli/constructors/callable_class.dart';
 import 'package:cli/constructors/const_constructor.dart';
 import 'package:cli/constructors/factory_constructor.dart';
 import 'package:cli/constructors/fractions.dart';
@@ -10,6 +11,7 @@ import 'package:cli/control_flow/control_flow.dart';
 import 'package:cli/enums/enums.dart';
 import 'package:cli/functions/function_example.dart' as function;
 import 'package:cli/null_types/null_type.dart';
+import 'package:cli/projectUtility.dart';
 import 'package:cli/relational_operator/relational_operator.dart';
 
 void main(List<String> arguments) {
@@ -119,10 +121,14 @@ void simulatorForConstructor() {
       FractionsWithPrivateProperties(32, 6);
   thirdFraction.showFraction();
   FactoryConstructor firstFactoryConstructor = FactoryConstructor('Spider-Man');
+  addSeparation(100);
   FactoryConstructor secondFactoryConstructor = FactoryConstructor("He-Man");
+  addSeparation(100);
   FactoryConstructor thirdFactoryConstructor = FactoryConstructor("Iron-Man");
+  addSeparation(100);
   FactoryConstructor fourthFactoryConstructor =
       FactoryConstructor("Spider-Man");
+  addSeparation(100);
   AnotherFactoryConstructor fifthFactoryConstructor =
       AnotherFactoryConstructor(20);
   fifthFactoryConstructor.getA();
@@ -142,8 +148,12 @@ void simulatorForConstructor() {
   for (ConstConstructor member in superHeroList) {
     print(member.toString());
   }
-  print("=========================================");
+  addSeparation(100);
   for (ConstConstructor member in newSuperHeroList) {
     print(member.toString());
   }
+  addSeparation(100);
+  CallableClass callableExample = CallableClass(name: "Callable Instance");
+  print(callableExample.call());
+  addSeparation(100);
 }
