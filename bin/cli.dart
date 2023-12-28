@@ -162,7 +162,9 @@ void simulatorForConstructor() {
 }
 
 void simulatorForInheritance() {
-  final simulator = InheritanceSimulator();
-  simulator.simulateDoubleValue();
-  simulator.simulateDoubleFromSuperValue();
+  final inheritanceSimulator = InheritanceSimulator();
+  inheritanceSimulator.simulateDoubleValue();
+  inheritanceSimulator.simulateDoubleFromSuperValue();
+  final covariantSimulator = CovariantSimulator();
+  covariantSimulator.simulate();
 }
