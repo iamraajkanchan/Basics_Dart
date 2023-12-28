@@ -4,6 +4,7 @@ import 'package:cli/classes/classes_square.dart';
 import 'package:cli/classes/classes_triangle.dart';
 import 'package:cli/collections/collections.dart';
 import 'package:cli/constructors/callable_class.dart';
+import 'package:cli/constructors/cloning_object.dart';
 import 'package:cli/constructors/const_constructor.dart';
 import 'package:cli/constructors/factory_constructor.dart';
 import 'package:cli/constructors/fractions.dart';
@@ -156,4 +157,5 @@ void simulatorForConstructor() {
   CallableClass callableExample = CallableClass(name: "Callable Instance");
   print(callableExample.call());
   addSeparation(100);
+  CloningObjectSimulator().cloneCandidates();
 }
