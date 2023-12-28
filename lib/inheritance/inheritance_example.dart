@@ -1,12 +1,20 @@
 import '../projectUtility.dart';
 
 class BaseClass {
-  double returnDoubleValue(double a) => a * 0.5;
+  final double _b;
+
+  const BaseClass(this._b);
+
+  double returnDoubleValue(double a) => a * _b * 0.5;
 }
 
 class ChildClass extends BaseClass {
+  final double _c;
+
+  ChildClass(this._c) : super(_c);
+
   @override
-  double returnDoubleValue(double a) => a * 0.25;
+  double returnDoubleValue(double a) => a * _c * 0.25;
 
   double returnDoubleFromSuperValue(double a) {
     final original = super.returnDoubleValue(a);
@@ -15,13 +23,13 @@ class ChildClass extends BaseClass {
 }
 
 class InheritanceSimulator {
-  final BaseClass baseDerivedFromBase = BaseClass();
-  final BaseClass baseDerivedFromChild = ChildClass();
+  final BaseClass baseDerivedFromBase = BaseClass(3.1412);
+  final BaseClass baseDerivedFromChild = ChildClass(2.323);
 
   // Since Dart 2.9, implicit down casts are not allowed.
   // That's why the following example throws compile time error.
   // ChildClass childDerivedFromBase = BaseClass();
-  final ChildClass childDerivedFromChild = ChildClass();
+  final ChildClass childDerivedFromChild = ChildClass(23.23);
 
   void simulateDoubleValue() {
     addSeparation(100);
