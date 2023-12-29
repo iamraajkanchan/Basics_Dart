@@ -11,13 +11,14 @@ import 'package:cli/constructors/fractions.dart';
 import 'package:cli/control_flow/control_flow.dart';
 import 'package:cli/enums/enums.dart';
 import 'package:cli/functions/function_example.dart' as function;
+import 'package:cli/inheritance/abstraction.dart';
 import 'package:cli/inheritance/inheritance_example.dart';
 import 'package:cli/null_types/null_type.dart';
 import 'package:cli/projectUtility.dart';
 import 'package:cli/relational_operator/relational_operator.dart';
 
 void main(List<String> arguments) {
-  simulatorForInheritance();
+  simulatorForAbstraction();
 }
 
 void simulatorOfCollections() {
@@ -167,4 +168,14 @@ void simulatorForInheritance() {
   inheritanceSimulator.simulateDoubleFromSuperValue();
   final covariantSimulator = CovariantSimulator();
   covariantSimulator.simulate();
+}
+
+void simulatorForAbstraction() {
+  final abstractImplementer = AbstractImplementer();
+  final abstractSimulator = AbstractSimulator();
+  addSeparation(100);
+  abstractImplementer.firstMethod();
+  addSeparation(100);
+  abstractSimulator.simulateAbstractionThroughImplement();
+  abstractSimulator.simulateAbstractionThroughExtend();
 }
