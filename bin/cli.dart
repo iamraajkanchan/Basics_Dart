@@ -13,12 +13,13 @@ import 'package:cli/enums/enums.dart';
 import 'package:cli/functions/function_example.dart' as function;
 import 'package:cli/inheritance/abstraction.dart';
 import 'package:cli/inheritance/inheritance_example.dart';
+import 'package:cli/inheritance/mixins_example.dart';
 import 'package:cli/null_types/null_type.dart';
 import 'package:cli/projectUtility.dart';
 import 'package:cli/relational_operator/relational_operator.dart';
 
 void main(List<String> arguments) async {
-  simulatorForAbstraction();
+  simulatorForMixin();
 }
 
 void simulatorOfCollections() {
@@ -181,4 +182,9 @@ void simulatorForAbstraction() {
   abstractSimulator.simulateAbstractionThroughImplement();
   abstractSimulator.simulateAbstractionThroughExtend();
   abstractSimulator.simulateAbstractionThroughBodyLessClass();
+}
+
+void simulatorForMixin() {
+  final mixinSimulator = MixinSimulator();
+  mixinSimulator.showDevQualities();
 }
