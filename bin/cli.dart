@@ -17,7 +17,7 @@ import 'package:cli/null_types/null_type.dart';
 import 'package:cli/projectUtility.dart';
 import 'package:cli/relational_operator/relational_operator.dart';
 
-void main(List<String> arguments) {
+void main(List<String> arguments) async {
   simulatorForAbstraction();
 }
 
@@ -174,8 +174,11 @@ void simulatorForAbstraction() {
   final abstractImplementer = AbstractImplementer();
   final abstractSimulator = AbstractSimulator();
   addSeparation(100);
+  // As expected you can't access the private overridden method through
+  // abstractImplementer object from this file.
   abstractImplementer.firstMethod();
   addSeparation(100);
   abstractSimulator.simulateAbstractionThroughImplement();
   abstractSimulator.simulateAbstractionThroughExtend();
+  abstractSimulator.simulateAbstractionThroughBodyLessClass();
 }

@@ -61,9 +61,61 @@ class AbstractExtender extends FirstAbstract
   }
 }
 
+class FirstBodyLessClass {
+  void firstMethod() {}
+
+  void firstMethodWithBody() {
+    print("FirstBodyLessClass :: firstMethodWithBody");
+  }
+}
+
+class SecondBodyLessClass {
+  void secondMethod() {}
+
+  void secondMethodWithBody() {
+    print("SecondBodyLessClass :: secondMethodWithBody");
+  }
+}
+
+class ThirdBodyLessClass {
+  void thirdMethod() {}
+}
+
+// Note: If you implement a class then you must implement every method of
+// the base class be it either a body or body less method.
+// Note: If you extend a class then you won't have to inherit every method of
+// the base class. It's your choice to override any method you like;
+class AbstractBodyLessImplementer extends FirstBodyLessClass
+    implements SecondBodyLessClass, ThirdBodyLessClass {
+  @override
+  void firstMethod() {
+    print(
+        "AbstractBodyLessImplementer :: FirstBodyLessClass :: firstMethod : extended ");
+  }
+
+  @override
+  void secondMethod() {
+    print(
+        "AbstractBodyLessImplementer :: SecondBodyLessClass :: secondMethod : implemented");
+  }
+
+  @override
+  void secondMethodWithBody() {
+    print(
+        "AbstractBodyLessImplementer :: SecondBodyLessClass :: secondMethodWithBody : implemented");
+  }
+
+  @override
+  void thirdMethod() {
+    print(
+        "AbstractBodyLessImplementer :: ThirdBodyLessClass :: thirdMethod : implemented");
+  }
+}
+
 class AbstractSimulator {
   final _abstractImplementer = AbstractImplementer();
   final _abstractExtender = AbstractExtender();
+  final _abstractBodyLessImplementer = AbstractBodyLessImplementer();
 
   void simulateAbstractionThroughImplement() {
     _abstractImplementer.firstMethod();
@@ -82,5 +134,14 @@ class AbstractSimulator {
     addSeparation(100);
     _abstractExtender.secondMethod();
     addSeparation(100);
+  }
+
+  void simulateAbstractionThroughBodyLessClass() {
+    addSeparation(100);
+    _abstractBodyLessImplementer.firstMethod();
+    addSeparation(100);
+    _abstractBodyLessImplementer.firstMethodWithBody();
+    addSeparation(100);
+    _abstractBodyLessImplementer.secondMethod();
   }
 }
