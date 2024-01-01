@@ -12,7 +12,9 @@ class FractionsWithPrivateProperties extends Fraction {
   // {[this._nominator, this._denominator]} on the private properties, but you make the property
   // as optional positional parameter ([this._nominator, this._denominator])
   FractionsWithPrivateProperties(this._nominator, this._denominator) {
-    _setDefaultDenominator();
+    if (_denominator == 0) {
+      throw UnsupportedError("Division by zero is not supported");
+    }
   }
 
   // As Dart doesn't support method overloading / constructor overloading you have to use
@@ -24,10 +26,6 @@ class FractionsWithPrivateProperties extends Fraction {
     List<String> inputString = fraction.split("/");
     _nominator = int.parse(inputString.first);
     _denominator = int.parse(inputString.last);
-  }
-
-  void _setDefaultDenominator() {
-    _denominator = 1;
   }
 
   @override
@@ -46,7 +44,11 @@ class FractionsWithPublicProperties extends Fraction {
   int? nominator;
   int? denominator;
 
-  FractionsWithPublicProperties({required this.nominator, this.denominator});
+  FractionsWithPublicProperties({required this.nominator, this.denominator}) {
+    if (denominator == 0) {
+      throw UnsupportedError("Division by zero is not supported");
+    }
+  }
 
   // As Dart doesn't support method overloading or constructor overloading.
   // You have to use the concept of a named constructor.
@@ -60,7 +62,12 @@ class FractionsWithPublicProperties extends Fraction {
   FractionsWithPublicProperties.fromString(String fraction) {
     List<String> inputString = fraction.split("/");
     nominator = int.parse(inputString.first);
-    denominator = int.parse(inputString.last);
+    int denominatorValue = int.parse(inputString.last);
+    if (denominatorValue == 0) {
+      throw UnsupportedError("Division by Zero");
+    } else {
+      denominator = denominatorValue;
+    }
   }
 
   @override

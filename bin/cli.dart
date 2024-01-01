@@ -21,7 +21,7 @@ import 'package:cli/projectUtility.dart';
 import 'package:cli/relational_operator/relational_operator.dart';
 
 void main(List<String> arguments) async {
-  simulatorForComparator();
+  simulatorForConstructor();
 }
 
 void simulatorOfCollections() {
@@ -117,15 +117,20 @@ void simulatorForFunctionExample() {
 }
 
 void simulatorForConstructor() {
-  FractionsWithPublicProperties firstFraction =
-      FractionsWithPublicProperties(nominator: 1, denominator: 3);
-  firstFraction.showFraction();
-  FractionsWithPublicProperties secondFraction =
-      FractionsWithPublicProperties.whole(4);
-  secondFraction.showFraction();
-  FractionsWithPrivateProperties thirdFraction =
-      FractionsWithPrivateProperties(32, 6);
-  thirdFraction.showFraction();
+  try {
+    FractionsWithPublicProperties firstFraction =
+        FractionsWithPublicProperties(nominator: 1, denominator: 3);
+    firstFraction.showFraction();
+    FractionsWithPublicProperties secondFraction =
+        FractionsWithPublicProperties.whole(4);
+    secondFraction.showFraction();
+    FractionsWithPrivateProperties thirdFraction =
+        FractionsWithPrivateProperties(32, 6);
+    thirdFraction.showFraction();
+  } on UnsupportedError catch (exc) {
+    print(exc.message ?? "Unsupported Exception");
+  }
+
   FactoryConstructor firstFactoryConstructor = FactoryConstructor('Spider-Man');
   addSeparation(100);
   FactoryConstructor secondFactoryConstructor = FactoryConstructor("He-Man");
