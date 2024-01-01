@@ -1,12 +1,12 @@
 abstract class Fraction {
   void showFraction();
 
-  String toFraction();
+  void showInFractionForm();
 }
 
 class FractionsWithPrivateProperties extends Fraction {
-  final int? _nominator;
-  int? _denominator;
+  late int? _nominator;
+  late int? _denominator;
 
   // Note you cannot make the property as named parameter
   // {[this._nominator, this._denominator]} on the private properties, but you make the property
@@ -19,6 +19,13 @@ class FractionsWithPrivateProperties extends Fraction {
   // the concept of named constructor.
   FractionsWithPrivateProperties.oneHalf() : this(1, 2);
 
+  // This is an example of named constructor
+  FractionsWithPrivateProperties.fromString(String fraction) {
+    List<String> inputString = fraction.split("/");
+    _nominator = int.parse(inputString.first);
+    _denominator = int.parse(inputString.last);
+  }
+
   void _setDefaultDenominator() {
     _denominator = 1;
   }
@@ -30,13 +37,13 @@ class FractionsWithPrivateProperties extends Fraction {
   }
 
   @override
-  String toFraction() {
-    return "$_nominator/$_denominator";
+  void showInFractionForm() {
+    print("$_nominator/$_denominator");
   }
 }
 
 class FractionsWithPublicProperties extends Fraction {
-  final int? nominator;
+  int? nominator;
   int? denominator;
 
   FractionsWithPublicProperties({required this.nominator, this.denominator});
@@ -49,6 +56,13 @@ class FractionsWithPublicProperties extends Fraction {
   FractionsWithPublicProperties.whole(int number)
       : this(nominator: number, denominator: 1);
 
+  // This is an example of named constructor
+  FractionsWithPublicProperties.fromString(String fraction) {
+    List<String> inputString = fraction.split("/");
+    nominator = int.parse(inputString.first);
+    denominator = int.parse(inputString.last);
+  }
+
   @override
   void showFraction() {
     print(
@@ -56,7 +70,7 @@ class FractionsWithPublicProperties extends Fraction {
   }
 
   @override
-  String toFraction() {
-    return "$nominator/$denominator";
+  void showInFractionForm() {
+    print("$nominator/$denominator");
   }
 }
