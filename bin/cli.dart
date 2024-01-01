@@ -12,6 +12,7 @@ import 'package:cli/control_flow/control_flow.dart';
 import 'package:cli/enums/enums.dart';
 import 'package:cli/functions/function_example.dart' as function;
 import 'package:cli/inheritance/abstraction.dart';
+import 'package:cli/inheritance/extension_method.dart';
 import 'package:cli/inheritance/inheritance_example.dart';
 import 'package:cli/inheritance/mixins_example.dart';
 import 'package:cli/null_types/null_type.dart';
@@ -19,7 +20,7 @@ import 'package:cli/projectUtility.dart';
 import 'package:cli/relational_operator/relational_operator.dart';
 
 void main(List<String> arguments) async {
-  simulatorForMixin();
+  simulateForExtensionMethod();
 }
 
 void simulatorOfCollections() {
@@ -187,4 +188,17 @@ void simulatorForAbstraction() {
 void simulatorForMixin() {
   final mixinSimulator = MixinSimulator();
   mixinSimulator.showDevQualities();
+}
+
+void simulateForExtensionMethod() {
+  final extensionSimulator = ExtensionMethod();
+  extensionSimulator.simulate();
+  /**
+   * Output -
+   * ExtensionMethod :: firstFraction : 12/1
+   *
+   * Though this is not the expected output but the
+   * default of denominator is set to 1 to learn default
+   * constructor which has a body
+   * */
 }

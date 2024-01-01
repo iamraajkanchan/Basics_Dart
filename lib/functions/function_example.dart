@@ -21,7 +21,7 @@ class FunctionExample {
   void anonymousFunctionExample() {
     // Below is an example of anonymous function. An anonymous function doesn't have a name.
     // You can write the function on the go.
-    bool Function(int) evenChecker = (number) => number % 2 == 0;
+    evenChecker(number) => number % 2 == 0;
     print("anonymousFunctionExample :: evenChecker : ${evenChecker(202)}");
     bool primeChecker(number) => number % 2 != 0;
     print("anonymousFunctionExample :: primeChecker : ${primeChecker(423)}");

@@ -1,5 +1,7 @@
 abstract class Fraction {
   void showFraction();
+
+  String toFraction();
 }
 
 class FractionsWithPrivateProperties extends Fraction {
@@ -26,6 +28,11 @@ class FractionsWithPrivateProperties extends Fraction {
     print(
         "FractionsWithPrivateProperties :: showFraction :: result : ${_nominator! / _denominator!}");
   }
+
+  @override
+  String toFraction() {
+    return "$_nominator/$_denominator";
+  }
 }
 
 class FractionsWithPublicProperties extends Fraction {
@@ -46,5 +53,10 @@ class FractionsWithPublicProperties extends Fraction {
   void showFraction() {
     print(
         "FractionsWithPublicProperties :: showFraction :: result : ${nominator! / denominator!}");
+  }
+
+  @override
+  String toFraction() {
+    return "$nominator/$denominator";
   }
 }
