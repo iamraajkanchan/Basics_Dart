@@ -21,7 +21,7 @@ import 'package:cli/projectUtility.dart';
 import 'package:cli/relational_operator/relational_operator.dart';
 
 void main(List<String> arguments) async {
-  simulatorForConstructor();
+  simulatorOfCollections();
 }
 
 void simulatorOfCollections() {
@@ -36,6 +36,8 @@ void simulatorOfCollections() {
   print("Showing Hero Villain Group");
   addHeroVillainGroup();
   showHeroVillainGroup();
+  ListExample listExample = ListExample();
+  listExample.simulate();
 }
 
 void simulatorOfClasses() {
