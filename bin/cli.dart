@@ -38,6 +38,8 @@ void simulatorOfCollections() {
   showHeroVillainGroup();
   ListExample listExample = ListExample();
   listExample.simulate();
+  SetExample setExample = SetExample();
+  setExample.simulate();
 }
 
 void simulatorOfClasses() {

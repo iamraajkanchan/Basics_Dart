@@ -165,3 +165,75 @@ class ListExample {
     }
   }
 }
+
+class SetExample {
+  void simulate() {
+    addSeparation(100);
+    createGrowableSetWithTypeInference();
+    addSeparation(100);
+    fillEmptySet();
+    addSeparation(100);
+    createUnmodifiableSet();
+    addSeparation(100);
+    useSpreadOperator();
+    addSeparation(100);
+    useIfStatementToCreateSet("even");
+    addSeparation(100);
+    useForStatementToCreateSet();
+    addSeparation(100);
+  }
+
+  void createGrowableSetWithTypeInference() {
+    final growableSet = {1, 2, 3};
+    growableSet.add(4);
+    growableSet.add(2);
+    printList("createGrowableSet", growableSet);
+  }
+
+  void createGrowableSetWithoutTypeInference() {
+    final growableSet = <int>{1, 2, 3};
+    growableSet.add(4);
+    printList("createGrowableSet", growableSet);
+  }
+
+  void fillEmptySet() {
+    final emptySet = <int>{};
+    emptySet.add(3);
+    printList("fillEmptySet", emptySet);
+  }
+
+  void createUnmodifiableSet() {
+    final unModifiableSet = Set<int>.unmodifiable({1, 3, 4});
+    try {
+      unModifiableSet.add(6);
+    } on UnsupportedError catch (exc) {
+      print(exc.toString());
+      print("Cannot add an element in an empty set");
+    }
+
+    printList("createUnmodifiableSet", unModifiableSet);
+  }
+
+  void useSpreadOperator() {
+    // This kind of set doesn't have add or remove methods.
+    final unModifiableSet = Set<int>.unmodifiable({9, 4, 6});
+    final numberSet = {3, 9, ...unModifiableSet};
+    printList("useSpreadOperator", numberSet);
+  }
+
+  void useIfStatementToCreateSet(String numberType) {
+    final setFromIfStatement = {2, 4, 5, 6, if (numberType == "even") 8 else 7};
+    printList("useIfStatementToCreateSet", setFromIfStatement);
+  }
+
+  void useForStatementToCreateSet() {
+    final setFromForStatement = {0, for (var i = 1; i < 25; i++) i};
+    printList("useForStatementToCreateSet", setFromForStatement);
+  }
+
+  void printList(String method, final numbers) {
+    for (final number in numbers) {
+      print("SetExample :: printList :: $method :: $number");
+    }
+  }
+}
