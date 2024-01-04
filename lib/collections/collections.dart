@@ -81,6 +81,12 @@ class ListExample {
     addSeparation(100);
     createGeneratedList();
     addSeparation(100);
+    useSpreadOperator();
+    addSeparation(100);
+    useIfStatementToCreateList("even");
+    addSeparation(100);
+    useForStatementToCreateList();
+    addSeparation(100);
   }
 
   void createGrowableList() {
@@ -126,13 +132,36 @@ class ListExample {
   }
 
   void createGeneratedList() {
-    final generatedList = List<int>.generate(10, (index) => pow(2, index) as int);
+    final generatedList =
+        List<int>.generate(10, (index) => pow(2, index) as int);
     printList("createGeneratedList", generatedList);
+  }
+
+  void useSpreadOperator() {
+    final unModifiableList = List<int>.unmodifiable([9, 4, 6]);
+    final numberList = [3, 9, ...unModifiableList];
+    printList("useSpreadOperator", numberList);
+  }
+
+  void useIfStatementToCreateList(String numberType) {
+    final listFromIfStatement = [
+      2,
+      4,
+      5,
+      6,
+      if (numberType == "even") 8 else 7
+    ];
+    printList("useIfStatementToCreateList", listFromIfStatement);
+  }
+
+  void useForStatementToCreateList() {
+    final listFromForStatement = [0, for (var i = 1; i < 25; i++) i];
+    printList("useForStatementToCreateList", listFromForStatement);
   }
 
   void printList(String method, final numbers) {
     for (final number in numbers) {
-      print("ListExample :: createFilledList :: $method :: $number");
+      print("ListExample :: printList :: $method :: $number");
     }
   }
 }
