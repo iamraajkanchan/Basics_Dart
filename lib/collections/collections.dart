@@ -241,20 +241,26 @@ class SetExample {
 class MapExample {
   void simulate() {
     addSeparation(100);
-    createMap();
+    createSimpleMap();
+    addSeparation(100);
+    addValueInMap();
     addSeparation(100);
   }
-  void createMap() {
+  void createSimpleMap() {
     final simpleMap = <String, int>{"Raj": 34, "Ravi": 34, "Ryan": 28};
     printMap("createMap", simpleMap);
   }
 
+  void addValueInMap() {
+    final simpleMap = <String, int>{"Raj": 34, "Ravi": 34, "Ryan": 28};
+    simpleMap.putIfAbsent("Dua", () => 32);
+    simpleMap["Taylor"] = 35;
+    printMap("addValueInMap", simpleMap);
+  }
+
   void printMap(String method, final Map map) {
     for (final key in map.keys) {
-      print("MapExample :: printMap :: $method :: key : $key");
-    }
-    for (final value in map.values) {
-      print("MapExample :: printMap :: $method :: value : $value");
+      print("MapExample :: printMap :: $method :: key : $key, value : ${map[key]}");
     }
   }
 }
