@@ -40,6 +40,8 @@ void simulatorOfCollections() {
   listExample.simulate();
   SetExample setExample = SetExample();
   setExample.simulate();
+  MapExample mapExample = MapExample();
+  mapExample.simulate();
 }
 
 void simulatorOfClasses() {

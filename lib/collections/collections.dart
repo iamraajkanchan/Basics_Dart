@@ -187,19 +187,19 @@ class SetExample {
     final growableSet = {1, 2, 3};
     growableSet.add(4);
     growableSet.add(2);
-    printList("createGrowableSet", growableSet);
+    printSet("createGrowableSet", growableSet);
   }
 
   void createGrowableSetWithoutTypeInference() {
     final growableSet = <int>{1, 2, 3};
     growableSet.add(4);
-    printList("createGrowableSet", growableSet);
+    printSet("createGrowableSet", growableSet);
   }
 
   void fillEmptySet() {
     final emptySet = <int>{};
     emptySet.add(3);
-    printList("fillEmptySet", emptySet);
+    printSet("fillEmptySet", emptySet);
   }
 
   void createUnmodifiableSet() {
@@ -211,29 +211,50 @@ class SetExample {
       print("Cannot add an element in an empty set");
     }
 
-    printList("createUnmodifiableSet", unModifiableSet);
+    printSet("createUnmodifiableSet", unModifiableSet);
   }
 
   void useSpreadOperator() {
     // This kind of set doesn't have add or remove methods.
     final unModifiableSet = Set<int>.unmodifiable({9, 4, 6});
     final numberSet = {3, 9, ...unModifiableSet};
-    printList("useSpreadOperator", numberSet);
+    printSet("useSpreadOperator", numberSet);
   }
 
   void useIfStatementToCreateSet(String numberType) {
     final setFromIfStatement = {2, 4, 5, 6, if (numberType == "even") 8 else 7};
-    printList("useIfStatementToCreateSet", setFromIfStatement);
+    printSet("useIfStatementToCreateSet", setFromIfStatement);
   }
 
   void useForStatementToCreateSet() {
     final setFromForStatement = {0, for (var i = 1; i < 25; i++) i};
-    printList("useForStatementToCreateSet", setFromForStatement);
+    printSet("useForStatementToCreateSet", setFromForStatement);
   }
 
-  void printList(String method, final numbers) {
+  void printSet(String method, final numbers) {
     for (final number in numbers) {
       print("SetExample :: printList :: $method :: $number");
+    }
+  }
+}
+
+class MapExample {
+  void simulate() {
+    addSeparation(100);
+    createMap();
+    addSeparation(100);
+  }
+  void createMap() {
+    final simpleMap = <String, int>{"Raj": 34, "Ravi": 34, "Ryan": 28};
+    printMap("createMap", simpleMap);
+  }
+
+  void printMap(String method, final Map map) {
+    for (final key in map.keys) {
+      print("MapExample :: printMap :: $method :: key : $key");
+    }
+    for (final value in map.values) {
+      print("MapExample :: printMap :: $method :: value : $value");
     }
   }
 }
