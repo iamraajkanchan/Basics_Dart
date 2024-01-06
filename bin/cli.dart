@@ -1,3 +1,4 @@
+import 'package:cli/aynchronous/future_example.dart';
 import 'package:cli/classes/classes_point.dart';
 import 'package:cli/classes/classes_rectangle.dart';
 import 'package:cli/classes/classes_square.dart';
@@ -19,9 +20,10 @@ import 'package:cli/inheritance/mixins_example.dart';
 import 'package:cli/null_types/null_type.dart';
 import 'package:cli/projectUtility.dart';
 import 'package:cli/relational_operator/relational_operator.dart';
+import 'package:test/expect.dart';
 
 void main(List<String> arguments) async {
-  simulatorOfCollections();
+  simulatorForAsynchronousTask();
 }
 
 void simulatorOfCollections() {
@@ -218,4 +220,12 @@ void simulateForExtensionMethod() {
 void simulatorForComparator() {
   final compareSimulator = CompareSimulator();
   compareSimulator.simulate();
+}
+
+void simulatorForAsynchronousTask() {
+  final futureExample = FutureExample();
+  final processResult = futureExample.processData(3, 5);
+  processResult
+      .then((value) => print(value))
+      .catchError((error) => prints(error));
 }
