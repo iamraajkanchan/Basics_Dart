@@ -224,7 +224,7 @@ void simulatorForComparator() {
 
 void simulatorForAsynchronousTask() {
   final futureExample = FutureExample();
-  final processResult = futureExample.processData(3, 5);
+  final processResult = futureExample.processData(3, 18);
   processResult
       .then((value) => print(value))
       .catchError((error) => prints(error));

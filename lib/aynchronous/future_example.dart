@@ -3,7 +3,7 @@ import 'dart:math';
 class FutureExample {
   void simulate() {}
 
-  Future<int> processData(int firstParam, int secondParam) {
+  Future<int> processData(var firstParam, var secondParam) {
     var value = 0;
     try {
       for (var i = 0; i < firstParam; i++) {
@@ -13,7 +13,7 @@ class FutureExample {
         }
       }
       return Future<int>.value(value);
-    } on UnsupportedError catch (error) {
+    } on Exception catch (error) {
       return Future.error(error);
     }
   }
