@@ -222,10 +222,26 @@ void simulatorForComparator() {
   compareSimulator.simulate();
 }
 
-void simulatorForAsynchronousTask() {
+void simulatorForAsynchronousTask() async {
   final futureExample = FutureExample();
-  final processResult = futureExample.processData(3, 18);
-  processResult
+  final processFirstResult = futureExample.processData(3, 6);
+  // You should prefer async and await over a chain of then and catchError.
+  processFirstResult
       .then((value) => print(value))
-      .catchError((error) => prints(error));
+      .catchError((error) => print(error.message));
+  final processSecondResult = futureExample.processData(4, 7);
+  final processThirdResult = futureExample.processData(2, 2);
+  Future.wait([processFirstResult, processSecondResult, processThirdResult])
+      .then((value) => print(value))
+      .catchError((error) => print(error));
+  // The below code will print before all the output
+  // This is the ideal way of getting value from a method which returns Future<T>
+  try {
+    final processFourthResult = await futureExample.processData(5, 3);
+    print("simulatorForAsynchronousTask :: processFourthResult : $processFourthResult");
+  } on UnsupportedError catch(error) {
+    print(error.message);
+  }
+
+  print("Hello Asynchronous Task");
 }
